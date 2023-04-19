@@ -1,4 +1,4 @@
-package com.newsapp
+package com.newsapp.core.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
