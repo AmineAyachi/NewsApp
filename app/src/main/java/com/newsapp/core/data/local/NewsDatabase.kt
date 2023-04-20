@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.newsapp.core.data.local.dao.ArticleDao
-import com.newsapp.core.domain.model.Article
+import com.newsapp.core.data.local.entities.Article
 
 
 @Database(
