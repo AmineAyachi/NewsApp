@@ -5,6 +5,7 @@ import android.content.Context
 import com.newsapp.core.data.remote.RetrofitInstance
 import com.newsapp.core.data.remote.services.NewsService
 import com.newsapp.core.data.repository.Implementation.NewsRepository
+import com.newsapp.core.data.repository.Interface.INewsRepository
 import com.newsapp.core.domain.use_case.GetNews
 import dagger.Module
 import dagger.Provides
@@ -18,17 +19,19 @@ object AppModule {
     //    @Singleton
 //    @Provides
 //    fun provideContext(application: Application): Context = application.applicationContext
+
+    @Provides
+    @Singleton
+    fun provideNewsRepository(api: NewsService): INewsRepository = NewsRepository(api)
+
     @Provides
     @Singleton
     fun provideGetNewsUseCase(repository: NewsRepository): GetNews {
         return GetNews(repository)
     }
 
-    @Provides
-    @Singleton
-    fun provideNewsRepository(api: NewsService): NewsRepository {
-        return NewsRepository(api)
-    }
+
+
 
     @Provides
     @Singleton

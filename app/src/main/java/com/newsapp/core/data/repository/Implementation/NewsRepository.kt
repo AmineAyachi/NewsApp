@@ -9,9 +9,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class NewsRepository (private val api: NewsService) : INewsRepository {
-
+    class NewsRepository @Inject constructor(private val api: NewsService) : INewsRepository {
     private val TAG = "NewsRepository"
     override fun getAll (): Flow<Resource<News>> = flow {
         emit(Resource.Loading())
