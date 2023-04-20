@@ -1,6 +1,6 @@
-package com.newsapp.core.data.remote.dto.responses
+package com.newsapp.core.domain.model
 
-data class NewsResponse(
+data class News(
     val articles: MutableList<Article>,
     val status: String,
     val totalResults: Int

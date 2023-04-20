@@ -1,4 +1,4 @@
-package com.newsapp.core.data.remote.dto.responses
+package com.newsapp.core.domain.model
 
 data class Source(
     val id: Any,
