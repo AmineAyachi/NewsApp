@@ -140,7 +140,7 @@ fun NewsScreen(navController: NavController) {
                                 Spacer(modifier = Modifier.height(5.dp))
                                 Text(text ="Echec de la connecxion" , style = TextStyle(color = newsWhite, fontSize = 12.sp))
                                 Spacer(modifier = Modifier.height(10.dp))
-                                SmallLoadingButton(text = "Actualiser" , onClick = {viewModel.sav()})
+                                SmallLoadingButton(text = "Actualiser" , onClick = {viewModel.news()})
 
 
                             }
@@ -252,7 +252,7 @@ fun NewsScreen(navController: NavController) {
                                 Spacer(modifier = Modifier.height(10.dp))
                                 Text(text ="Echec de la connecxion" , style = TextStyle(color = newsWhite, fontSize = 16.sp))
                                 Spacer(modifier = Modifier.height(20.dp))
-                                SmallLoadingButton(text = "Actualiser" , onClick = {viewModel.sav()})
+                                SmallLoadingButton(text = "Actualiser" , onClick = {viewModel.news()})
 
 
                             }

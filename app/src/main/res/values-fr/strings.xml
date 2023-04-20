@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">NewsApp</string>
     <string name="n">N</string>
     <string name="ews_app">ews App</string>
+    <string name="lire_l_article">Lire l\'article</string>
 </resources>

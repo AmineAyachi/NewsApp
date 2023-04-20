@@ -15,26 +15,28 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-//    @Singleton
+    //    @Singleton
 //    @Provides
 //    fun provideContext(application: Application): Context = application.applicationContext
-
     @Provides
     @Singleton
-    fun newsApi ():NewsService{
-        return RetrofitInstance.NewsApi
-    }
-    @Provides
-    @Singleton
-    fun provideNewsRepository ( api: NewsService): NewsRepository {
-        return NewsRepository(api )
-    }
-
-
-    @Provides
-    @Singleton
-    fun provideGetNewsUseCase(repository: NewsRepository):GetNews{
+    fun provideGetNewsUseCase(repository: NewsRepository): GetNews {
         return GetNews(repository)
     }
 
+    @Provides
+    @Singleton
+    fun provideNewsRepository(api: NewsService): NewsRepository {
+        return NewsRepository(api)
+    }
+
+    @Provides
+    @Singleton
+    fun newsApi(): NewsService {
+        return RetrofitInstance.NewsApi
+    }
+
+    @Singleton
+    @Provides
+    fun provideContext(application: Application): Context = application.applicationContext
 }

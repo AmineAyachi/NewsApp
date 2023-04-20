@@ -1,8 +1,12 @@
 package com.newsapp.feature_news.presentation.viewmodels
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.newsapp.core.domain.model.Article
@@ -33,26 +37,6 @@ class NewsViewModel @Inject constructor(
         news()
     }
 
-
-    fun sav() {
-        viewModelScope.launch {
-            getNews().onEach { result ->
-                when (result) {
-                    is Resource.Success -> {
-                        _newsState.value = _newsState.value.copy(
-                            News  =  result.data?.articles ?: emptyList<Article>()
-                   )
-                    }
-                    is Resource.Error -> {
-                        _eventFlow.emit(UIEvent.ShowSnackbar(result.message ?: "Unknown error"))
-                    }
-                    is Resource.Loading -> {
-
-                    }
-                }
-            }.launchIn(this)
-        }
-    }
 
     fun news() {
         viewModelScope.launch {

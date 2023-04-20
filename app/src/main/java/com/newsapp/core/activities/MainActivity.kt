@@ -16,6 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,8 +28,11 @@ import com.newsapp.ui.theme.NewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 
+
+@ExperimentalComposeUiApi
+@ExperimentalMaterialApi
+@ExperimentalPagerApi
 @ExperimentalAnimationApi
-@OptIn(ExperimentalMaterialApi::class, ExperimentalPagerApi::class)
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
@@ -41,7 +45,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             NewsAppTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    val activity = LocalContext.current as Activity
                     val navController = rememberAnimatedNavController()
                     var navigateClick by remember { mutableStateOf(false) }
                     BodyContent(navController , navigateClick  ,{ navigateClick = false} ,  closeApp)
