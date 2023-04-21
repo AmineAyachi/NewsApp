@@ -6,4 +6,4 @@ J’ai consacré un peu plus de 6 heures de travail pour finir le projet.</p>
 <p class="has-line-data" data-line-start="5" data-line-end="7">J’ai rencontré un problème de compatibilité entre les packages utilisés dans le projet, étant donné qu’il y a plusieurs dépendances qui doivent être compatibles entre elles.<br>
 Les résultats de l’API NewsAPI en français ne contiennent pas les images.</p>
 <h2 class="code-line" data-line-start=7 data-line-end=8 ><a id="Le_travail_qui_me_reste_7"></a>Le travail qui me reste</h2>
-<p class="has-line-data" data-line-start="8" data-line-end="9">Il me reste à implémenter la fonctionnalité offline avec Room Database ainsi que la pagination avec Retrofit,Je vais mettre à jour le projet prochainement afin que la solution soit complète…</p>
+<p class="has-line-data" data-line-start="8" data-line-end="9">Il me reste à implémenter la fonctionnalité offline avec Room Database ,ui testing avec mockito et Espresso, ainsi que la pagination avec Retrofit,Je vais mettre à jour le projet prochainement afin que la solution soit complète…</p>
